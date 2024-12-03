@@ -1,11 +1,14 @@
-import NxWelcome from './nx-welcome';
+import GameTime from './time/game-time';
+import React, { useState } from 'react';
 
 export function App() {
+
   return (
     <div>
-      <NxWelcome title="exo-reign" />
+      <GameTime onNextTurn={(time) => {}} />
     </div>
   );
 }
+
 
 export default App;
