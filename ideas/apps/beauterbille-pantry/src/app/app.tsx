@@ -1,9 +1,11 @@
 import NxWelcome from './nx-welcome';
+import PantryOverview from './pantry/pantry-overview';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="Beauterbille Pantry" />
+      <PantryOverview />
+      {/* <NxWelcome title="Beauterbille Pantry" /> */}
     </div>
   );
 }
