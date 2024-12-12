@@ -13,6 +13,19 @@
 
 ## Run tasks
 
+To run the test database, use the docker container:
+```sh
+cd datasource
+docker-compose up -d
+# you can stop this process useing `docker-compose down`
+```
+
+Then start the server with:
+
+```sh
+nx serve server
+```
+
 To run the dev server for your app, use:
 
 ```sh
