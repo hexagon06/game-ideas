@@ -1,17 +1,22 @@
 import GameState from './state/game-state';
 import GameTime from './time/game-time';
-import React, { useState } from 'react';
 import { GameTimeProvider } from './time/game-time-context';
+import { GamePowerProvider } from './power/game-power';
+import { GameCardsProvider } from './cards/game-cards-context';
 
 export function App() {
   return (
-    <GameTimeProvider>
-      <div className="text-white bg-gray-800">
-        <GameTime onNextTurn={(time) => ({})} />
+    <GamePowerProvider>
+      <GameTimeProvider>
+        <GameCardsProvider>
+          <div className="text-white bg-gray-800">
+            <GameTime onNextTurn={(time) => ({})} />
 
-        <GameState></GameState>
-      </div>
-    </GameTimeProvider>
+            <GameState></GameState>
+          </div>
+        </GameCardsProvider>
+      </GameTimeProvider>
+    </GamePowerProvider>
   );
 }
 

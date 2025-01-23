@@ -1,12 +1,16 @@
 import { ActionCard, ActorCard } from "../cards/game-card";
 import { GameCardsInit } from "../cards/game-cards-context";
-import * as clone from 'clone'
 
 const cardIdGen = idGenerator();
 
 const cards: Partial<GameCardsInit> = {
+    inPlay: [
+        createActionCard(),
+        createActorCard(),
+    ],
     stack: [
         createActionCard(),
+        createActorCard(),
         createActionCard(),
         createActionCard(),
         createActionCard(),
@@ -50,7 +54,7 @@ function createActionCard(overrides?: Partial<Omit<ActionCard, 'id'>>): ActionCa
         id: id,
         type: 'action',
         title: `Action Card ${id}`,
-        image: 'https://via.placeholder.com/150',
+        image: 'https://placehold.co/200',
         imageAlt: `Action Card ${id}`,
         description: 'This is an action card',
         effect: `This is the effect of the action card ${id}`,
@@ -70,7 +74,7 @@ function createActorCard(overrides?: Partial<Omit<ActorCard, 'id'>>): ActorCard 
         id: id,
         type: 'actor',
         title: `Actor Card ${id}`,
-        image: 'https://via.placeholder.com/150',
+        image: 'https://placehold.co/200',
         imageAlt: `Actor Card ${id}`,
         description: 'This is an actor card',
         requirements: { power: parseInt(id) },
